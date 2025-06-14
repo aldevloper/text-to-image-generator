@@ -1,0 +1,124 @@
+/* 
+ * Animations for Image Generator
+ */
+
+/* Loader animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    animation: spin 1.5s linear infinite;
+}
+
+/* Fade-in animation for generated image */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.generated-image {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Button hover animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.generate-btn:active {
+    animation: pulse 0.3s ease;
+}
+
+/* Download button hover effect */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.download-btn:hover::after {
+    left: 100%;
+}
+
+/* Example card hover effect */
+.example-card {
+    position: relative;
+    z-index: 1;
+}
+
+.example-card::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.example-card:hover::before {
+    transform: scaleX(0.03);
+}
+
+/* Page transition */
+@keyframes pageTransition {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.main-content {
+    animation: pageTransition 0.3s ease-out;
+}
+
+/* Logo subtle animation */
+@keyframes logoGlow {
+    0% { text-shadow: 0 0 0 rgba(0, 113, 227, 0); }
+    50% { text-shadow: 0 0 10px rgba(0, 113, 227, 0.3); }
+    100% { text-shadow: 0 0 0 rgba(0, 113, 227, 0); }
+}
+
+.logo-icon {
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+/* Subtle heading animation */
+h1, h2 {
+    position: relative;
+}
+
+h1::after, 
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+h1:hover::after, 
+h2:hover::after {
+    width: 50px;
+    left: calc(50% - 25px);
+}
