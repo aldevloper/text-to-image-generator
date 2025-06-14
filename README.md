@@ -1,12 +1,11 @@
 # text-to-image-generator-
-
-# Setup Guide
+This repository hosts a lightweight, ready-to-use Text-to-Image Generator script that converts textual prompts into AI-generated images without requiring a database. The project is designed for quick deployment, making it ideal for developers, hobbyists, or anyone exploring AI-powered image generation. 
 
 ## API Key Requirement
 This application requires a valid RapidAPI key to function properly.
 
 1. **Get Your API Key:**
-   - Please purchase an API key from: 
+   - Please get an API key from: 
 
      https://rapidapi.com/devify/api/text-to-image-generator-api-ai-image
 
